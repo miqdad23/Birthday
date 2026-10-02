@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff9fc">
+
+  <title>A Little Birthday Wish 🎂</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"Hind Siliguri",sans-serif;
+  color:#625762;
+  background:
+    radial-gradient(circle at 10% 10%,#ffe4ee,transparent 27%),
+    radial-gradient(circle at 90% 20%,#ede5ff,transparent 30%),
+    radial-gradient(circle at 40% 90%,#ffeed8,transparent 30%),
+    #fffafd;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* Background */
+
+.blob{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(7px);
+  opacity:.32;
+  z-index:-2;
+  animation:blob 11s ease-in-out infinite;
+}
+
+.blob.one{
+  width:230px;
+  height:230px;
+  background:#ffcddd;
+  top:-80px;
+  left:-70px;
+}
+
+.blob.two{
+  width:280px;
+  height:280px;
+  background:#dcd0ff;
+  right:-110px;
+  top:35%;
+  animation-delay:-4s;
+}
+
+.blob.three{
+  width:250px;
+  height:250px;
+  background:#ffe2ba;
+  bottom:-100px;
+  left:20%;
+  animation-delay:-7s;
+}
+
+@keyframes blob{
+  50%{
+    transform:translate(20px,25px) scale(1.08);
+  }
+}
+
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  padding:40px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero-content{
+  max-width:800px;
+  animation:fadeUp 1s ease;
+}
+
+.tag{
+  display:inline-block;
+  padding:8px 17px;
+  background:rgba(255,255,255,.75);
+  border:1px solid #efdce5;
+  border-radius:50px;
+  font-family:"Quicksand";
+  font-size:13px;
+  color:#9a788d;
+  box-shadow:0 8px 30px rgba(100,70,100,.08);
+}
+
+.cake{
+  display:block;
+  font-size:65px;
+  margin:25px 0 10px;
+  animation:cake 2.5s ease-in-out infinite;
+}
+
+@keyframes cake{
+  50%{
+    transform:translateY(-9px) rotate(3deg);
+  }
+}
+
+h1{
+  font-size:clamp(38px,8vw,68px);
+  color:#665163;
+}
+
+.gradient{
+  background:linear-gradient(90deg,#dd88a8,#a68bdc);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.subtitle{
+  max-width:600px;
+  margin:15px auto;
+  line-height:1.8;
+  font-size:18px;
+  color:#826e7c;
+}
+
+
+/* DATE */
+
+.dates{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin:25px 0;
+  font-family:"Quicksand";
+}
+
+.date{
+  padding:10px 16px;
+  border-radius:14px;
+  background:rgba(255,255,255,.7);
+  border:1px solid #efdce5;
+  box-shadow:0 7px 20px rgba(100,70,100,.07);
+}
+
+.arrow{
+  color:#d895ad;
+  animation:arrow 1.3s infinite;
+}
+
+@keyframes arrow{
+  50%{
+    transform:translateX(6px);
+  }
+}
+
+
+/* COUNTDOWN */
+
+.countdown-title{
+  color:#957789;
+  margin-top:22px;
+}
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:15px 0 25px;
+}
+
+.time-box{
+  width:75px;
+  padding:12px 6px;
+  border-radius:16px;
+  background:rgba(255,255,255,.8);
+  border:1px solid #efdce7;
+}
+
+.time-box strong{
+  display:block;
+  font-family:"Quicksand";
+  font-size:23px;
+  color:#bd7897;
+}
+
+.time-box span{
+  font-size:11px;
+  color:#9c8995;
+}
+
+
+/* BUTTON */
+
+.open-btn{
+  border:0;
+  cursor:pointer;
+  padding:14px 27px;
+  border-radius:50px;
+  color:white;
+  font-family:"Hind Siliguri";
+  font-size:16px;
+  font-weight:600;
+  background:linear-gradient(135deg,#efa8bf,#b8a4e8);
+  box-shadow:0 10px 30px rgba(190,140,180,.3);
+  transition:.3s;
+}
+
+.open-btn:hover{
+  transform:translateY(-3px);
+}
+
+#openButton{
+  display:none;
+}
+
+
+/* Midnight text */
+
+.birthday-start{
+  display:none;
+  margin:20px auto;
+  font-size:22px;
+  color:#b36e8d;
+  font-weight:600;
+  animation:pop .8s ease;
+}
+
+@keyframes pop{
+  0%{
+    opacity:0;
+    transform:scale(.7);
+  }
+  70%{
+    transform:scale(1.08);
+  }
+  100%{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+
+/* CONTENT */
+
+.content{
+  display:none;
+  padding:25px 18px 100px;
+}
+
+.content.show{
+  display:block;
+  animation:fadeUp .8s ease;
+}
+
+.card{
+  max-width:780px;
+  margin:0 auto 35px;
+  padding:clamp(25px,6vw,55px);
+  background:rgba(255,255,255,.8);
+  border:1px solid #efdce5;
+  border-radius:28px;
+  box-shadow:0 25px 70px rgba(100,70,100,.1);
+  backdrop-filter:blur(14px);
+}
+
+.card-title{
+  text-align:center;
+  font-size:32px;
+  color:#70596b;
+  margin-bottom:30px;
+}
+
+.message p{
+  line-height:2;
+  font-size:17px;
+  margin-bottom:23px;
+}
+
+.special{
+  background:linear-gradient(135deg,#fff2f7,#f7f1ff);
+  border:1px solid #efdae5;
+  border-radius:20px;
+  padding:22px;
+  margin:30px 0;
+}
+
+.special p{
+  margin:0;
+}
+
+.signature{
+  text-align:right;
+  margin-top:35px;
+  color:#967b8c;
+}
+
+.ps{
+  border-top:1px dashed #e7ccd9;
+  margin-top:30px;
+  padding-top:22px;
+  text-align:center;
+  color:#a5758e;
+}
+
+
+/* WORLD LANGUAGES */
+
+.world{
+  overflow:hidden;
+}
+
+.world-description{
+  text-align:center;
+  margin:-15px 0 30px;
+  color:#927e8b;
+}
+
+.language-container{
+  position:relative;
+  height:310px;
+  overflow:hidden;
+  border-radius:20px;
+
+  background:
+    linear-gradient(180deg,#fff7fa,#faf7ff);
+  border:1px solid #f0dfe7;
+}
+
+.language-container:before,
+.language-container:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  height:65px;
+  z-index:5;
+  pointer-events:none;
+}
+
+.language-container:before{
+  top:0;
+  background:linear-gradient(#fff9fc,transparent);
+}
+
+.language-container:after{
+  bottom:0;
+  background:linear-gradient(transparent,#fcf8ff);
+}
+
+.languages{
+  text-align:center;
+  animation:languageScroll 35s linear infinite;
+}
+
+.languages div{
+  padding:10px;
+  font-size:18px;
+  color:#725f6c;
+}
+
+@keyframes languageScroll{
+  from{
+    transform:translateY(310px);
+  }
+  to{
+    transform:translateY(-100%);
+  }
+}
+
+.language-container:hover .languages{
+  animation-play-state:paused;
+}
+
+
+/* VIDEO */
+
+.video-subtitle{
+  text-align:center;
+  color:#957e8c;
+  margin-top:-15px;
+  margin-bottom:25px;
+}
+
+.video-wrapper{
+  max-width:430px;
+  margin:auto;
+  border-radius:24px;
+  overflow:hidden;
+  border:6px solid white;
+  box-shadow:0 15px 40px rgba(110,70,100,.15);
+  background:#f6edf2;
+}
+
+video{
+  display:block;
+  width:100%;
+  max-height:650px;
+  background:#f7eff3;
+}
+
+
+/* FOOTER */
+
+.footer{
+  text-align:center;
+  color:#aa8d9e;
+  padding-top:15px;
+}
+
+.footer span{
+  font-size:25px;
+}
+
+
+/* CONFETTI */
+
+.confetti{
+  position:fixed;
+  top:-20px;
+  width:9px;
+  height:14px;
+  border-radius:3px;
+  z-index:999;
+  pointer-events:none;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:0;
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+}
+
+@media(max-width:600px){
+
+  .subtitle{
+    font-size:16px;
+  }
+
+  .message p{
+    font-size:16px;
+  }
+
+  .date{
+    font-size:12px;
+    padding:8px 10px;
+  }
+
+  .countdown{
+    gap:6px;
+  }
+
+  .time-box{
+    width:65px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="blob one"></div>
+<div class="blob two"></div>
+<div class="blob three"></div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+  <div class="tag">
+    A tiny corner of the internet, made for a birthday ✨
+  </div>
+
+  <span class="cake">🎂</span>
+
+  <h1 id="mainTitle">
+    Almost <span class="gradient">Your Day...</span>
+  </h1>
+
+  <p class="subtitle" id="subtitle">
+    আমার birthday শেষ হওয়ার অপেক্ষা…
+    তারপরই তোমার পালা। 😄
+  </p>
+
+
+  <div class="dates">
+
+    <!-- EDIT DATES HERE -->
+
+    <div class="date">
+      01 October — Mine 🎈
+    </div>
+
+    <div class="arrow">
+      →
+    </div>
+
+    <div class="date">
+      02 October — Yours 🎂
+    </div>
+
+  </div>
+
+
+  <div id="countdownArea">
+
+    <div class="countdown-title">
+      তোমার birthday শুরু হতে বাকি 🌷
+    </div>
+
+    <div class="countdown">
+
+      <div class="time-box">
+        <strong id="hours">00</strong>
+        <span>HOURS</span>
+      </div>
+
+      <div class="time-box">
+        <strong id="minutes">00</strong>
+        <span>MINUTES</span>
+      </div>
+
+      <div class="time-box">
+        <strong id="seconds">00</strong>
+        <span>SECONDS</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="birthday-start" id="birthdayStart">
+    ✨ My birthday ends & your birthday begins! 🎂
+  </div>
+
+
+  <button
+    class="open-btn"
+    id="openButton"
+    onclick="openWish()"
+  >
+    তোমার জন্য ছোট্ট একটা Wish 🌷
+  </button>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTENT -->
+
+<section class="content" id="content">
+
+
+<!-- MAIN MESSAGE -->
+
+<div class="card">
+
+<h2 class="card-title">
+  🌷 শুভ জন্মদিন! 🎂
+</h2>
+
+
+<div class="message">
+
+<p>
+জন্মদিনের অনেক অনেক শুভেচ্ছা তোমাকে।
+প্রথমেই দোয়া করি, তোমার জীবনের সামনের দিনগুলো অনেক সুন্দর হোক,
+তোমার ইচ্ছা আর স্বপ্নগুলো ধীরে ধীরে পূরণ হোক,
+আর সবসময় হাসিখুশি থাকতে পারো। 🌸
+</p>
+
+
+<p>
+একটা মজার ব্যাপার হলো, আমাদের পরিচয়টা classmate হিসেবে,
+কিন্তু শুধু “classmate” বললে কেন জানি পুরোটা বলা হয় না। 😅
+সময়ের সাথে তুমি একজন ভালো friend হয়েছো,
+আবার তোমার ভাষায় আমি “বড় ভাই”ও!
+এই তিনটার combination-টা একটু অদ্ভুত, তবে সুন্দর। 😄
+</p>
+
+
+<p>
+হয়তো আমাদের প্রতিদিন অনেক কথা হয় না,
+সবকিছু নিয়ে খুব freely কথাও বলা হয় না।
+তারপরও কিছু মানুষ থাকে,
+যাদের সাথে সম্পর্কটা বোঝানোর জন্য প্রতিদিন কথা বলার প্রয়োজন পড়ে না।
+তুমি আমার কাছে তেমনই একজন।
+</p>
+
+
+<p>
+তোমার প্রতি একটা আলাদা আন্তরিকতা আর care আছে—
+একজন friend হিসেবে, classmate হিসেবে,
+আর তুমি যখন বড় ভাই বলো,
+তখন হয়তো একটু বড় ভাই হিসেবেও। 😊
+
+কখনো হয়তো সেটা বলা হয় না,
+কিন্তু তোমার ভালো থাকা,
+সামনে এগিয়ে যাওয়া আর জীবনে ভালো কিছু করা—
+এসব সত্যিই চাই।
+</p>
+
+
+<div class="special">
+
+<p>
+আর একটা ব্যাপার আমার বেশ মজার লাগে—
+আমার জন্মদিন শেষ হতে না হতেই তোমার জন্মদিন শুরু! 😄
+
+বলতে গেলে আমার birthday-এর celebration শেষ করে
+সরাসরি তোমাকে wish করার পালা।
+
+এই একদিনের ব্যবধানটার কারণে অন্তত তোমার birthday
+ভুলে যাওয়ার কোনো excuse আমার থাকবে না। 😂
+
+তবে ব্যাপারটা সুন্দরও—
+পরপর দুইটা দিন,
+দুইজনের জন্যই একটু special। ✨
+</p>
+
+</div>
+
+
+<p>
+জীবনের নতুন এই বছরটায় অনেক ভালো ভালো স্মৃতি জমা হোক।
+খারাপ সময়গুলো দ্রুত কেটে যাক,
+আর ভালো সময়গুলো দীর্ঘ হোক।
+
+তোমার মুখের হাসিটা যেন সবসময় থাকে। 🌸
+</p>
+
+
+<p>
+আর হ্যাঁ, বয়স আরেক বছর বাড়লো—
+তাই একটু দায়িত্বশীল হওয়ার চেষ্টা করতে পারো। 😌
+
+যদিও জন্মদিনের দিন বেশি জ্ঞান দেওয়া ঠিক হবে না,
+“বড় ভাই” হিসেবে এতটুকু অধিকার নিশ্চয়ই আছে! 😄
+</p>
+
+
+<p>
+অনেক ভালো থেকো,
+নিজের যত্ন নিও,
+এবং আজকের দিনটা অনেক সুন্দর করে কাটাও।
+</p>
+
+</div>
+
+
+<div class="signature">
+
+— তোমার একজন<br>
+Classmate, Friend<br>
+& তোমার ভাষায় “বড় ভাই” 😄
+
+</div>
+
+
+<div class="ps">
+
+P.S. Website বানিয়েছি বলে কিন্তু
+treat-এর requirement cancel হয়ে যায়নি। 😌🍰
+
+</div>
+
+</div>
+
+
+
+<!-- WORLD BIRTHDAY SECTION -->
+
+<div class="card world">
+
+<h2 class="card-title">
+  Birthday Wishes Around The World 🌍
+</h2>
+
+<p class="world-description">
+  ভাষা অনেক, কিন্তু wish একটাই —
+  তোমার দিনটা সুন্দর হোক। 🌸
+</p>
+
+
+<div class="language-container">
+
+<div class="languages">
+
+<div>শুভ জন্মদিন!</div>
+<div>Happy Birthday!</div>
+<div>जन्मदिन मुबारक हो!</div>
+<div>سالگرہ مبارک!</div>
+<div>عيد ميلاد سعيد!</div>
+<div>تولدت مبارک!</div>
+<div>जन्मदिनको शुभकामना!</div>
+<div>සුභ උපන්දිනයක්!</div>
+<div>பிறந்தநாள் வாழ்த்துக்கள்!</div>
+<div>పుట్టినరోజు శుభాకాంక్షలు!</div>
+<div>ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯಗಳು!</div>
+<div>ജന്മദിനാശംസകൾ!</div>
+<div>જન્મદિવસની શુભકામનાઓ!</div>
+<div>ਜਨਮਦਿਨ ਮੁਬਾਰਕ!</div>
+<div>生日快乐！</div>
+<div>お誕生日おめでとう！</div>
+<div>생일 축하합니다!</div>
+<div>สุขสันต์วันเกิด!</div>
+<div>Chúc mừng sinh nhật!</div>
+<div>Selamat ulang tahun!</div>
+<div>Maligayang kaarawan!</div>
+<div>Doğum günün kutlu olsun!</div>
+<div>Ad günün mübarək!</div>
+<div>יום הולדת שמח!</div>
+<div>Feliz cumpleaños!</div>
+<div>Joyeux anniversaire!</div>
+<div>Feliz aniversário!</div>
+<div>Buon compleanno!</div>
+<div>Alles Gute zum Geburtstag!</div>
+<div>Gefeliciteerd met je verjaardag!</div>
+<div>Grattis på födelsedagen!</div>
+<div>Gratulerer med dagen!</div>
+<div>Tillykke med fødselsdagen!</div>
+<div>Hyvää syntymäpäivää!</div>
+<div>Til hamingju með afmælið!</div>
+<div>Wszystkiego najlepszego!</div>
+<div>Všechno nejlepší k narozeninám!</div>
+<div>Všetko najlepšie k narodeninám!</div>
+<div>Boldog születésnapot!</div>
+<div>La mulți ani!</div>
+<div>Sretan rođendan!</div>
+<div>Srećan rođendan!</div>
+<div>Честит рожден ден!</div>
+<div>З днем народження!</div>
+<div>С днём рождения!</div>
+<div>Χρόνια πολλά!</div>
+<div>Gëzuar ditëlindjen!</div>
+<div>გილოცავ დაბადების დღეს!</div>
+<div>Ծնունդդ շնորհավոր!</div>
+<div>Feliĉan naskiĝtagon!</div>
+<div>Lá breithe shona duit!</div>
+<div>Pen-blwydd hapus!</div>
+<div>Co-là breith sona dhut!</div>
+<div>Zorionak!</div>
+<div>Heri ya kuzaliwa!</div>
+<div>Dhalasho wacan!</div>
+<div>Barka da ranar haihuwa!</div>
+<div>Ẹ kú ọjọ́ ìbí!</div>
+<div>Ezi ụbọchị ọmụmụ!</div>
+<div>Usuku olumnandi lokuzalwa!</div>
+<div>መልካም ልደት!</div>
+<div>Hauʻoli Lā Hānau!</div>
+<div>Rā whānau koa!</div>
+<div>Manuia lou aso fanau!</div>
+<div>Fiefia ho'o 'aho fā'ele'i!</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- VIDEO -->
+
+<div class="card">
+
+<h2 class="card-title">
+  And This is For You 🎬
+</h2>
+
+<p class="video-subtitle">
+  Birthday website যখন বানিয়েই ফেলেছি,
+  একটা birthday reel না থাকলে অসম্পূর্ণ থেকে যায়। 😄
+</p>
+
+
+<div class="video-wrapper">
+
+  <video
+    controls
+    playsinline
+    preload="metadata"
+  >
+
+    <!--
+       তোমার video-র নাম birthday-reel.mp4 রাখো
+       এবং index.html-এর পাশে upload করো
+    -->
+
+    <source
+      src="video.mp4"
+      type="video/mp4"
+    >
+
+    Your browser does not support video.
+
+  </video>
+
+</div>
+
+</div>
+
+
+<div class="footer">
+
+<span>🌸</span>
+
+<p>
+May this year bring you lots of reasons to smile.
+</p>
+
+</div>
+
+
+</section>
+
+
+
+<script>
+
+/*
+========================================
+      IMPORTANT — BIRTHDAY DATE
+========================================
+
+Month starts from 0 in JavaScript:
+
+January   = 0
+February  = 1
+March     = 2
+...
+October   = 9
+
+Example:
+2 October 2026, 12:00 AM
+*/
+
+const BIRTHDAY_DATE =
+  new Date(2026, 9, 2, 0, 0, 0);
+
+
+
+const hoursEl =
+  document.getElementById("hours");
+
+const minutesEl =
+  document.getElementById("minutes");
+
+const secondsEl =
+  document.getElementById("seconds");
+
+const countdownArea =
+  document.getElementById("countdownArea");
+
+const birthdayStart =
+  document.getElementById("birthdayStart");
+
+const openButton =
+  document.getElementById("openButton");
+
+const mainTitle =
+  document.getElementById("mainTitle");
+
+const subtitle =
+  document.getElementById("subtitle");
+
+
+let birthdayTriggered = false;
+
+
+
+/* COUNTDOWN */
+
+function updateCountdown(){
+
+  const now = new Date();
+
+  const distance =
+    BIRTHDAY_DATE - now;
+
+
+  /* Birthday has started */
+
+  if(distance <= 0){
+
+    showBirthdayState();
+
+    return;
+
+  }
+
+
+  const totalSeconds =
+    Math.floor(distance / 1000);
+
+  const hours =
+    Math.floor(totalSeconds / 3600);
+
+  const minutes =
+    Math.floor((totalSeconds % 3600) / 60);
+
+  const seconds =
+    totalSeconds % 60;
+
+
+  hoursEl.textContent =
+    String(hours).padStart(2,"0");
+
+  minutesEl.textContent =
+    String(minutes).padStart(2,"0");
+
+  secondsEl.textContent =
+    String(seconds).padStart(2,"0");
+
+}
+
+
+
+function showBirthdayState(){
+
+  countdownArea.style.display =
+    "none";
+
+  birthdayStart.style.display =
+    "block";
+
+  openButton.style.display =
+    "inline-block";
+
+
+  mainTitle.innerHTML =
+    `Happy <span class="gradient">Birthday!</span>`;
+
+
+  subtitle.innerHTML =
+    `আমার birthday শেষ — এবার তোমার দিন। 🌷<br>
+     Hope your day begins with a smile. ✨`;
+
+
+  if(!birthdayTriggered){
+
+    birthdayTriggered = true;
+
+    createConfetti();
+
+  }
+
+}
+
+
+updateCountdown();
+
+setInterval(
+  updateCountdown,
+  1000
+);
+
+
+
+/* OPEN MESSAGE */
+
+function openWish(){
+
+  const content =
+    document.getElementById("content");
+
+  content.classList.add("show");
+
+  createConfetti();
+
+  setTimeout(()=>{
+
+    content.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+  },200);
+
+}
+
+
+
+/* CONFETTI */
+
+function createConfetti(){
+
+  const colors = [
+    "#efa7bf",
+    "#c1ace9",
+    "#ffd2a2",
+    "#bce0d2",
+    "#f6cbd9"
+  ];
+
+
+  for(let i=0;i<65;i++){
+
+    const piece =
+      document.createElement("div");
+
+    piece.className =
+      "confetti";
+
+    piece.style.left =
+      Math.random()*100+"vw";
+
+    piece.style.backgroundColor =
+      colors[
+        Math.floor(
+          Math.random()*colors.length
+        )
+      ];
+
+    piece.style.animationDuration =
+      (Math.random()*2+3)+"s";
+
+    piece.style.animationDelay =
+      Math.random()*.8+"s";
+
+    document.body.appendChild(piece);
+
+
+    setTimeout(
+      ()=>piece.remove(),
+      5500
+    );
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
